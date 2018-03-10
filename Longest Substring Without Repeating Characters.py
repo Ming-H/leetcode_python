@@ -33,3 +33,4 @@ if __name__ == "__main__":
     method = Solution()
     result = method.lengthOfLongestSubstring(s)
     print(result)
+                
