@@ -5,6 +5,10 @@
 #
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        """
+        Time complextiy : O(n)
+        Space complexity : O(1)
+        """
         if len(nums) == 0:
             return 0
         i = 0

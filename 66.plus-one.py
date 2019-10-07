@@ -5,9 +5,22 @@
 #
 class Solution:
     def plusOne(self, digits):
-        num = 0
-        for i in range(len(digits)):
-            num += digits[i] * pow(10, (len(digits)-1-i))
-        return [int(i) for i in str(num+1)]
-
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        N = len(digits)
+        i = N-1
+                
+        while digits[i] == 9:
+            digits[i] = 0
+            
+            if i == 0:
+                digits.insert(0,1)
+                return digits
+            else:
+                i -= 1
+        
+        digits[i] += 1
+        return digits
 
