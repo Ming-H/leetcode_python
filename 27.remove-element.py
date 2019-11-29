@@ -5,6 +5,10 @@
 #
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
+        """
+        Time complexity : O(n)
+        Space complexity : O(1)
+        """
         i = 0
         n = len(nums)
         while i<n:

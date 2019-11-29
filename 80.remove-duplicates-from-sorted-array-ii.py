@@ -7,11 +7,11 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums) < 3: 
             return len(nums)
-        i = 1
-        for j in range(1, len(nums)-1):
-            if nums[j-1] != nums[j+1]:
-                nums[i] = nums[j]
-                i += 1
-        nums[i] = nums[-1]
-        return i + 1
+        pos = 1
+        for i in range(1, len(nums)-1):
+            if nums[i-1] != nums[i+1]:
+                nums[pos] = nums[i]
+                pos += 1
+        nums[pos] = nums[-1]
+        return pos + 1
 

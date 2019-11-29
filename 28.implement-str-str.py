@@ -7,6 +7,7 @@ class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         '''
         KMP的整体时间复杂度为O(m + n)。
+        https://blog.csdn.net/liuxiao214/article/details/78026473
         KMP字符串匹配的主函数
         若存在字串返回字串在字符串中开始的位置下标，或者返回-1
         '''

@@ -5,6 +5,9 @@
 #
 class Solution:
     def threeSumClosest(self, num: List[int], target: int) -> int:
+        """
+        no duplicate
+        """
         num.sort()
         result = num[0] + num[1] + num[2]
         for i in range(len(num) - 2):
@@ -19,6 +22,7 @@ class Solution:
                 
                 if sum < target:
                     j += 1
+                    
                 elif sum > target:
                     k -= 1
             

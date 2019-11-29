@@ -10,6 +10,8 @@ class Solution:
         :type s: str
         :type t: str
         :rtype: str
+        Time Complexity: O(|S| + |T|)
+        Space Complexity: O(|S| + |T|)
         """
         from collections import Counter
         if not t or not s:

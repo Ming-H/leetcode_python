@@ -6,13 +6,13 @@
 class Solution:
     # returns leftmost (or rightmost) index at which `target` should be inserted in sorted
     # array `nums` via binary search.
-    def extreme_insertion_index(self, nums, target, left):
+    def extreme_insertion_index(self, nums, target, flag):
         lo = 0
         hi = len(nums)
 
         while lo < hi:
             mid = (lo + hi) // 2
-            if nums[mid] > target or (left and target == nums[mid]):
+            if nums[mid] > target or (flag and target == nums[mid]):
                 hi = mid
             else:
                 lo = mid+1

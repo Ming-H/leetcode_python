@@ -5,6 +5,10 @@
 #
 class Solution:
     def isValid(self, s: str) -> bool:
+        """
+        Time complexity : O(n)
+        Space complexity : O(n)
+        """
         stack = []
         mapping = {")": "(", "}": "{", "]": "["}
         for char in s:

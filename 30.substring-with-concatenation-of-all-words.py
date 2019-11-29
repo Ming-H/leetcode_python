@@ -15,9 +15,10 @@ class Solution:
                 d[w] += 1
             else:
                 d[w] = 1
+        
         i = 0
         ans = []
-
+        
         # sliding window(s)
         for k in range(l):
             left = k

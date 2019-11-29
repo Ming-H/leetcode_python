@@ -20,7 +20,8 @@ class Solution:
 
         for i in range(1, m+1):
             for j in range(1, n+1):
-                res_matrix[i][j] += res_matrix[i-1][j]+res_matrix[i][j-1]
+                res_matrix[i][j] += res_matrix[i-1][j]+ \
+                                    res_matrix[i][j-1]
         return res_matrix[-1][-1]
 
 

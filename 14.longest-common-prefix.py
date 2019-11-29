@@ -5,6 +5,10 @@
 #
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        """
+        Time complexity : O(S)
+        Space complexity : O(1)
+        """
         if len(strs)==0:
             return ""
         str0=strs[0]

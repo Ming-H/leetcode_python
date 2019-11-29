@@ -5,6 +5,9 @@
 #
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        """
+        duplicate 
+        """
         res = []
         nums.sort()
         for i in range(len(nums)-2):
@@ -23,6 +26,7 @@ class Solution:
                         l += 1
                     while l < r and nums[r] == nums[r-1]:
                         r -= 1
-                    l += 1; r -= 1
+                    l += 1
+                    r -= 1
         return res
 

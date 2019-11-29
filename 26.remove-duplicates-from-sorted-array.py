@@ -6,8 +6,7 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         """
-        Time complextiy : O(n)
-        Space complexity : O(1)
+        sort array
         """
         if len(nums) == 0:
             return 0
