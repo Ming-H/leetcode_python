@@ -3,8 +3,6 @@
 #
 # [152] Maximum Product Subarray
 #
-
-# @lc code=start
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         if not nums:
@@ -12,11 +10,10 @@ class Solution:
         locMin = locMax = gloMax = nums[0]
         for i in range(1, len(nums)):
             tmp = locMin
-            locMin = min(locMin*nums[i], nums[i], locMax*nums[i])
+            locMin = min(locMin*nums[i], nums[i], locMax*nums[i]) 
             locMax = max(tmp*nums[i], nums[i], locMax*nums[i])
             gloMax = max(gloMax, locMax)
-        return gloMax
+        return gloMax     
 
 
-# @lc code=end
 

@@ -3,20 +3,16 @@
 #
 # [179] Largest Number
 #
-
-# @lc code=start
-
-class LargerNumKey(str):
-    def __lt__(x, y):
-        return x+y > y+x
-        
 class Solution:
     """
-    Time complexity :O(nlgn)
-    Space complexity : O(n)
+    Input: [3,30,34,5,9]
+    Output: "9534330"
     """
+    # bubble sort
     def largestNumber(self, nums):
-        largest_num = ''.join(sorted(map(str, nums), key=LargerNumKey))
-        return '0' if largest_num[0] == '0' else largest_num
-# @lc code=end
+        for i in range(len(nums), 0, -1):
+            for j in range(i-1):
+                if str(nums[j]) + str(nums[j+1]) < str(nums[j+1]) + str(nums[j]):
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
+        return str(int("".join(map(str, nums))))
 

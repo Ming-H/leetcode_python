@@ -3,33 +3,26 @@
 #
 # [123] Best Time to Buy and Sell Stock III
 #
-
-# @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        if not prices:
+        n = len(prices)
+        if n==0:
             return 0
-    
-        # forward traversal, profits record the max profit 
-        # by the ith day, this is the first transaction
-        profits = []
-        max_profit = 0
-        current_min = prices[0]
-        for price in prices:
-            current_min = min(current_min, price)
-            max_profit = max(max_profit, price - current_min)
-            profits.append(max_profit)
         
-        # backward traversal, max_profit records the max profit
-        # after the ith day, this is the second transaction 
-        total_max = 0    
-        max_profit = 0
-        current_max = prices[-1]
-        for i in range(len(prices) - 1, -1, -1):
-            current_max = max(current_max, prices[i])
-            max_profit = max(max_profit, current_max - prices[i])
-            total_max = max(total_max, max_profit + profits[i])
-            
-        return total_max
-# @lc code=end
+        dp = [0 for i in range(n)]
+        tmp=0
+        for i in range(1,3):
+            balance = -prices[0]
+            tmp = dp[0]
+            for j in range(1, n):
+                copy = dp[j]
+                dp[j] = max(dp[j-1], balance+prices[j])
+                balance = max(balance, tmp-prices[j])
+                tmp = copy
+        return dp[n-1]
+
+    """
+    https://blog.csdn.net/laputafallen/article/details/79846424
+    """
+        
 
