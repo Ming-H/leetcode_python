@@ -3,15 +3,12 @@
 #
 # [219] Contains Duplicate II
 #
-
-# @lc code=start
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        dic = {}
-        for i,v in enumerate(nums):
-            if v in dic and i-dic[v]<=k:
+        dict = {}
+        for i, v in enumerate(nums):
+            if v in dict and i-dict[v] <= k:
                 return True
-            dic[v] = i
+            dict[v] = i
         return False
-# @lc code=end
 

@@ -9,10 +9,10 @@ class Solution:
         Time complexity : O(n)
         Space complexity : O(n)
         """
-        map = {}
+        d = {}
         for i, item in enumerate(num):
-            if item not in map:
-                map[target-item] = i
+            if item not in d:
+                d[target-item] = i
             else:
-                return map[item], i
-        return -1,-1
+                return d[item], i
+        return -1, -1

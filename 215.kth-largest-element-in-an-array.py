@@ -3,11 +3,8 @@
 #
 # [215] Kth Largest Element in an Array
 #
-
-# @lc code=start
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        # O(n) time, quick selection
         # convert the kth largest to smallest
         return self.findKthSmallest(nums, len(nums)+1-k)
     
@@ -20,7 +17,7 @@ class Solution:
                 return self.findKthSmallest(nums[:pos], k)
             else:
                 return nums[pos]
-                
+    
     # choose the right-most element as pivot   
     def partition(self, nums, l, r):
         low = l
@@ -31,6 +28,3 @@ class Solution:
             l += 1
         nums[low], nums[r] = nums[r], nums[low]
         return low
-                
-# @lc code=end
-

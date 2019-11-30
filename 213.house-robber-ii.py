@@ -3,8 +3,6 @@
 #
 # [213] House Robber II
 #
-
-# @lc code=start
 class Solution:
     def rob(self, nums: List[int]) -> int:
         def rob(nums):
@@ -14,5 +12,4 @@ class Solution:
             return now
         return max(rob(nums[len(nums) != 1:]), rob(nums[:-1]))
         
-# @lc code=end
 

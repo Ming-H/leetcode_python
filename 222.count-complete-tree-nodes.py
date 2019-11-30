@@ -3,8 +3,6 @@
 #
 # [222] Count Complete Tree Nodes
 #
-
-# @lc code=start
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -27,7 +25,5 @@ class Solution:
         if not root:
             return 0
         return 1 + self.getDepth(root.left)
-
-        
-# @lc code=end
+    
 

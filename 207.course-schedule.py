@@ -3,8 +3,6 @@
 #
 # [207] Course Schedule
 #
-
-# @lc code=start
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = [[] for _ in range(numCourses)]
@@ -26,5 +24,4 @@ class Solution:
             if not dfs(i):
                 return False
         return True
-# @lc code=end
 

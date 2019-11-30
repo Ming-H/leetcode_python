@@ -3,8 +3,6 @@
 #
 # [226] Invert Binary Tree
 #
-
-# @lc code=start
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -15,10 +13,6 @@
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         if root:
-            invert = self.invertTree
-            root.left, root.right = invert(root.right), invert(root.left)
-            return root
-
-
-# @lc code=end
+            root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+        return root
 

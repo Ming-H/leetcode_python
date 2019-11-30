@@ -3,20 +3,13 @@
 #
 # [442] Find All Duplicates in an Array
 #
-
-# @lc code=start
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
-        """
-        https://www.jianshu.com/p/d8c780372a65
-        """
-        rs = []
-        for num in nums:
-            num = abs(num)
-            if nums[num-1] < 0:
-                rs.append(num)
+        res = []
+        for item in nums:
+            index = abs(item)-1
+            if nums[index]<0:
+                res.append(abs(item))
             else:
-                nums[num-1] = -nums[num-1]
-        return rs
-# @lc code=end
-
+                nums[index] *= -1
+        return res

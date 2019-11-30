@@ -3,19 +3,12 @@
 #
 # [220] Contains Duplicate III
 #
-
-# @lc code=start
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
-        """
-        https://blog.csdn.net/qq_20141867/article/details/82024222
-        """
-        
         # 检验数据合法性
         if k < 1 or t < 0:
             return False
         # 这里采用有序字典，它是dict的一个继承子类，按照元素输入顺序进行排序
-        import collections
         dic = collections.OrderedDict()
         for n in nums:
             # 注意判断t是否为0
@@ -30,8 +23,3 @@ class Solution:
             # 加入新数
             dic[key] = n
         return False
-
-
-
-# @lc code=end
-

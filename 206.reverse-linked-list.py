@@ -3,8 +3,6 @@
 #
 # [206] Reverse Linked List
 #
-
-# @lc code=start
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -21,6 +19,7 @@ class Solution:
             curr.next = prev
             prev = curr
             curr = next
+        
         return prev
-# @lc code=end
+    
 
