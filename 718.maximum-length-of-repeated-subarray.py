@@ -8,23 +8,16 @@
 class Solution:
     def findLength(self, A: List[int], B: List[int]) -> int:
         """
-        O(n^2) time
-        O(1) memory
+        Time Complexity: O(M*N)O(M∗N)
+        Space Complexity: O(M*N)O(M∗N)
         """
-        n,m=len(A),len(B)
-        res=0    
-        for offset in range(-m,n):
-            i,j=max(offset,0),max(0,-offset)
-            cur=0
-            while i<n and j<m:
-                if A[i]==B[j]:
-                    cur+=1
-                    res=max(res,cur)
-                else:
-                    cur=0
-                i+=1
-                j+=1
-        return res
+        memo = [[0] * (len(B) + 1) for _ in range(len(A) + 1)]
+        for i in range(len(A) - 1, -1, -1):
+            for j in range(len(B) - 1, -1, -1):
+                if A[i] == B[j]:
+                    memo[i][j] = memo[i+1][j+1]+1
+        return max(max(row) for row in memo)
+
 
 
 # @lc code=end
