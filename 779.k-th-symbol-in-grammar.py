@@ -17,6 +17,7 @@ class Solution:
         while l<r:
             mid = (l+r)//2
             if mid<K:
+                # xor to flip 1 to 0 or 0 to 1
                 ans = ans ^ 1
                 l = mid +1
             else:
