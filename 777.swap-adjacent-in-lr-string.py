@@ -7,23 +7,14 @@
 # @lc code=start
 class Solution:
     def canTransform(self, start: str, end: str) -> bool:
-        i, j = 0, 0
-        if(start == end): 
-            return True
-        
-        n = len(start)
-        
-        while i < n and j < n:
-            while i < n - 1 and (start[i] == 'X'): i += 1
-            while j < n -1 and (end[j] == 'X'): j += 1
-            
-            if (start[i] != end[j]): 
+        L, R = 0, 0
+        for s, e in zip(start, end):
+            L += (e == 'L') - (s == 'L')
+            R += (s == 'R') - (e == 'R')
+
+            if L < 0 or L > 0 and s == 'R' or R < 0 or R > 0 and s == 'L':
                 return False
-            if (start[i] == 'R' and j < i) or (start[i] == 'L' and i < j): 
-                return False
-            i += 1
-            j += 1
-            
-        return True
+
+        return not R and not L
 # @lc code=end
 
