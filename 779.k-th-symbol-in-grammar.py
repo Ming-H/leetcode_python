@@ -13,14 +13,14 @@ class Solution:
         可以看作异或
         """
         ans = 0
-        s, e = 1, 2**(N-1)
-        while s<e:
-            m = s+(e-s)//2
-            if m < K:
-                ans = ans^1 
-                s = m+1
+        l,r = 1, 2**(N-1)
+        while l<r:
+            mid = (l+r)//2
+            if mid<K:
+                ans = ans ^ 1
+                l = mid +1
             else:
-                e = m
+                r = mid
         return ans
 # @lc code=end
 
