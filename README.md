@@ -13,6 +13,10 @@ some solution about  algorithm in leetcode
 
 [90] Subsets II
 
-2）动态规划
+2）二分查找
+
+[153] Find Minimum in Rotated Sorted Array
+
+[153] Find Minimum in Rotated Sorted Array II
 
 3）双指针
