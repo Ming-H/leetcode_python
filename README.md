@@ -19,4 +19,6 @@ some solution about  algorithm in leetcode
 
 [153] Find Minimum in Rotated Sorted Array II
 
+[162] Find Peak Element
+
 3）双指针
