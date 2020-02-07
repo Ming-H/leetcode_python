@@ -24,3 +24,5 @@ some solution about  algorithm in leetcode
 3）双指针
 
 [167] Two Sum II - Input array is sorted
+
+[189] Rotate Array
