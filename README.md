@@ -22,3 +22,5 @@ some solution about  algorithm in leetcode
 [162] Find Peak Element
 
 3）双指针
+
+[167] Two Sum II - Input array is sorted
