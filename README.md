@@ -9,6 +9,8 @@ some solution about  algorithm in leetcode
 
 [40] Combination Sum II
 
+[216] Combination Sum III
+
 [79] Word Search
 
 [90] Subsets II
