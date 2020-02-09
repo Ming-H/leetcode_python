@@ -32,3 +32,7 @@ some solution about  algorithm in leetcode
 4)快慢指针
 
 [209] Minimum Size Subarray Sum
+
+5) for while 结构
+
+[457] Circular Array Loop
