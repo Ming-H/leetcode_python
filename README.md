@@ -36,3 +36,5 @@ some solution about  algorithm in leetcode
 5) for while 结构
 
 [457] Circular Array Loop
+
+[565] Array Nesting
