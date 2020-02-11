@@ -33,8 +33,16 @@ some solution about  algorithm in leetcode
 
 [209] Minimum Size Subarray Sum
 
-5) for while 结构
+5)for while 结构
 
 [457] Circular Array Loop
 
 [565] Array Nesting
+
+6) 排序算法
+
+快速排序、归并排序、堆排序、插入排序、冒泡排序
+
+7) 查找算法
+
+二分查找、快速查找（快排）
