@@ -31,6 +31,8 @@ some solution about  algorithm in leetcode
 
 4)快慢指针
 
+[19] Remove Nth Node From End of List
+
 [209] Minimum Size Subarray Sum
 
 5)for while 结构
