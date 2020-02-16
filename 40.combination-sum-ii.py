@@ -14,7 +14,13 @@ class Solution:
     def combine_sum_2(self, nums, start, path, result, target):
         # Base case: if the sum of the path satisfies the target, we will consider 
         # it as a solution, and stop there
-        if not target:
+        # if not target:
+        #     result.append(path)
+        #     return
+        if target<0:
+            return
+
+        if target==0:
             result.append(path)
             return
         
@@ -28,8 +34,8 @@ class Solution:
     
             # If the current element is bigger than the assigned target, there is 
             # no need to keep searching, since all the numbers are positive
-            if nums[i] > target:
-                break
+            # if nums[i] > target:
+            #     break
     
             # We change the start to `i + 1` because one element only could
             # be used once

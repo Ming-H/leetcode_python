@@ -15,7 +15,7 @@ class Solution:
         Time complexity : O(max(m, n))
         Space complexity : O(max(m, n))
         """
-        carry = 0
+        carry = 0 # 存储商，即上一次运算的进位
         root = n = ListNode(0)
         while l1 or l2 or carry:
             v1 = v2 = 0

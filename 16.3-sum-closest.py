@@ -16,7 +16,7 @@ class Solution:
                 sum = num[i] + num[j] + num[k]
                 if sum == target:
                     return sum
-                
+                #更新res
                 if abs(sum - target) < abs(result - target):
                     result = sum
                 

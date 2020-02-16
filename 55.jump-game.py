@@ -7,7 +7,7 @@
 # @lc code=start
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        m = 0
+        m = 0 #到达的最远的位置
         for i, item in enumerate(nums):
             if i > m:
                 return False

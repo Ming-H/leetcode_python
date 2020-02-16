@@ -23,7 +23,8 @@ class Solution:
         if not head:
             return None
 
-        # Move the two pointers until they reach the proper starting point
+        # Move the two pointers until they reach the 
+        # proper starting point
         # in the list.
         cur, prev = head, None
         while m > 1:

@@ -8,7 +8,7 @@ class Solution:
         if len(words) == 0:
             return []
         # initialize d, l, ans
-        l = len(words[0])
+        
         d = {}
         for w in words:
             if w in d:
@@ -16,9 +16,8 @@ class Solution:
             else:
                 d[w] = 1
         
-        i = 0
         ans = []
-        
+        l = len(words[0])
         # sliding window(s)
         for k in range(l):
             left = k

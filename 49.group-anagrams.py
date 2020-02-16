@@ -10,14 +10,14 @@ class Solution:
         Space Complexity: O(NK)
         """
         ans = dict()
-        for s in strs:
+        for item in strs:
             count = [0] * 26
-            for c in s:
-                count[ord(c) - ord('a')] += 1
+            for c in item:
+                count[ord(c)-ord('a')] += 1
             if tuple(count) not in ans:
-                ans[tuple(count)] = [s]
+                ans[tuple(count)] = [item]
             else:
-                ans[tuple(count)].append(s)
+                ans[tuple(count)].append(item)
         return ans.values()
 
 

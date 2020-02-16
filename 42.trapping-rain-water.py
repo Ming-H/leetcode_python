@@ -14,19 +14,19 @@ class Solution:
         volume = 0
         left, right = 0, len(height) - 1
         l_max, r_max = height[left], height[right]
-        while left < right:
-                if height[left] < height[right]:
-                    if height[left] > l_max:
-                        l_max = height[left]
-                    else:
-                        volume += l_max - height[left]
-                    left += 1
+        while left <= right:
+            if height[left] < height[right]:
+                if height[left] > l_max:
+                    l_max = height[left]
                 else:
-                    if height[right] > r_max:
-                        r_max = height[right]
-                    else:
-                        volume += r_max - height[right]
-                    right -= 1
+                    volume += l_max - height[left]
+                left += 1
+            else:
+                if height[right] > r_max:
+                    r_max = height[right]
+                else:
+                    volume += r_max - height[right]
+                right -= 1
         return volume
         
 

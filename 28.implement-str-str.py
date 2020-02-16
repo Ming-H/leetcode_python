@@ -6,11 +6,38 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         '''
+        https://www.cnblogs.com/grandyang/p/6992403.html
         KMP的整体时间复杂度为O(m + n)。
-        https://blog.csdn.net/liuxiao214/article/details/78026473
-        KMP字符串匹配的主函数
         若存在字串返回字串在字符串中开始的位置下标，或者返回-1
+
+        失配时，模式串向右移动的距离 = 已匹配字符数 - 失配字符的上一位字符所对应的最大长度值
+        失配时，模式串向右移动的距离 = 失配字符所在位置 - 失配字符对应的next值。
         '''
+    #     pnext = self.gen_pnext(p)
+    #     i, j = 0, 0
+    #     while (i < len(s) and j < len(p)) :
+    #         if (j == - 1 or s[i] == p[j]) : 
+    #             i += 1
+    #             j += 1
+    #         else:
+    #             j = pnext[j] #pnext包含-1， 致使j=-1
+    #     return i-j if j==len(p) else -1
+
+    # def gen_pnext(self, p):
+    #     k = -1
+    #     j = 0
+    #     pnext = [-1 for i in range(len(p))]
+    #     while j < len(p) - 1:
+    #         if (k == -1 or p[j] == p[k]):
+    #             k += 1
+    #             j += 1
+    #             pnext[j] = k if p[j] != p[k] else pnext[k] 
+    #             # 如果p[j] == p[next[j]]了，再用p[next[j]]和s[i]去匹配必然会失配
+            
+    #         else:
+    #             k = pnext[k]
+    #     return pnext
+
         pnext = self.gen_pnext(needle)
         n = len(haystack)
         m = len(needle)
@@ -20,7 +47,7 @@ class Solution:
                 i += 1
                 j += 1
             elif (j!=0):
-                j = pnext[j-1]
+                j = pnext[j-1] # 前一位的pnext数组的值
             else:
                 i += 1
         if (j == m):

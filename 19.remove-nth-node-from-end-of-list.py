@@ -28,5 +28,5 @@ class Solution:
             fast = fast.next
             slow = slow.next
         slow.next = slow.next.next
-        return head
+        return head # 返回头
         

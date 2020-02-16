@@ -5,6 +5,7 @@
 #
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
+        # 二分查找
         low = 0
         high = len(nums)-1
         while low<=high:

@@ -22,7 +22,7 @@ class Solution:
         elif len(ans) <= level:
                 ans.append([root.val])
         elif not level%2:
-            #if it is an even level, then then level ans should be inversed, 
+            #if it is an even level, then level ans should be inversed, 
             # so I use extend founction
             ans[level].extend([root.val])
         else:

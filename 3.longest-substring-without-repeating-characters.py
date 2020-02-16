@@ -6,7 +6,8 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
-        顺序遍历，用字典保存未出现过的字符，若当前字符出现在字典，则start移动
+        顺序遍历，用字典保存未出现过的字符，若当前字符出现在字典，
+        则start移动
         Time complexity : O(n)
         Space complexity (HashMap) : O(min(m, n))
         """

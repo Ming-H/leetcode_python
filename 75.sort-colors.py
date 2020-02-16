@@ -8,17 +8,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        red, white, blue = 0, 0, len(nums)-1
-    
-        while white <= blue:
-            if nums[white] == 0:
-                nums[red], nums[white] = nums[white], nums[red]
-                white += 1
-                red += 1
-            elif nums[white] == 1:
-                white += 1
+        i, j, k = 0, 0, len(nums)-1
+        while j <= k:
+            if nums[j] == 0:
+                nums[i], nums[j] = nums[j], nums[i]
+                j += 1
+                i += 1
+            elif nums[j] == 1:
+                j += 1
             else:
-                nums[white], nums[blue] = nums[blue], nums[white]
-                blue -= 1
+                nums[j], nums[k] = nums[k], nums[j]
+                k -= 1
         return nums
 

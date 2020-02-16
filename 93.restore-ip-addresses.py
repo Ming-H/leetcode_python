@@ -23,7 +23,8 @@ class Solution:
                 #choose two digits, the first one should not be "0"
                 elif i == 2 and s[0] != "0": 
                     self.dfs(s[i:], index+1, path+s[:i]+".", res)
-                #choose three digits, the first one should not be "0", and should less than 256
+                #choose three digits, the first one should not be "0", 
+                # and should less than 256
                 elif i == 3 and s[0] != "0" and int(s[:3]) <= 255:
                     self.dfs(s[i:], index+1, path+s[:i]+".", res)
 

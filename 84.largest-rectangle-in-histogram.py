@@ -7,7 +7,7 @@ class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         """
         The stack maintain the indexes of buildings with ascending height.
-        Before adding a new building pop the building who is taller than 
+        Before adding a new building, pop the building who is taller than 
         the new one. The building popped out represent the height of a 
         rectangle with the new building as the right boundary and the 
         current stack top as the left boundary. Calculate its area and 
@@ -17,12 +17,12 @@ class Solution:
         stack = [-1]
         ans = 0
         for i in range(len(heights)):
-            while heights[i] < heights[stack[-1]]:
+            while heights[i] < heights[stack[-1]]: # 当前元素小于上一个元素
                 h = heights[stack.pop()]
                 w = i - stack[-1] - 1
                 ans = max(ans, h * w)
             stack.append(i)
-        heights.pop()
+        # heights.pop()
         return ans
             
 

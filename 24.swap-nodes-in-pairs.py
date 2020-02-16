@@ -16,7 +16,7 @@ class Solution:
             a = pre.next
             b = a.next
             pre.next, b.next, a.next = b, a, b.next
-            pre = a
+            pre = a # 此时b在a前面 
         return self.next
                     
 
