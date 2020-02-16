@@ -17,7 +17,7 @@ class Solution:
          O(1) extra space 
          takes O(n) time.
         """
-        dummy_head = ListNode(-1)
+        dummy_head = ListNode(0)
         dummy_head.next = head
         
         current_node = dummy_head

@@ -5,6 +5,13 @@
 #
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        return len(nums) != len(set(nums))
+        # return len(nums) != len(set(nums))
+        d = {}
+        for item in nums:
+            if item not in d:
+                d[item] = 1
+            else:
+                return True
+        return False
 
 

@@ -8,6 +8,7 @@ class Solution:
         """
         Time complexity: O(n)
         Space complexity: O(1)
+        先移动快指针，满足要求时，在移动慢指针
         """
         left = 0
         Sum = 0

@@ -23,7 +23,7 @@ class Solution:
                     m = worddict[resubfix]
                     # 不能取到字符本身
                     if m != i: 
-                        result.append([m, i])
+                        result.append([m, i]) # 添加的顺序要与可组成回文串的顺序对应
                 # 如果后半部分是回文字符串，并且前半部分的逆序在字典中
                 if j != count and subfix == resubfix and reprefix in worddict:
                     result.append([i, worddict[reprefix]])

@@ -5,12 +5,19 @@
 #
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
-        def combs(k, n, cap):
-            if not k:
-                return [[]] * (not n)
-            return [comb + [last]
-                    for last in range(1, cap)
-                    for comb in combs(k-1, n-last, last)]
-        return combs(k, n, 10)
+        res = []
+        nums = range(1, 10)
+        self.dfs(nums, k, 0, [], res, n)
+        return res
         
+    def dfs(self, nums, k, index, path, res, target):
+        # edge case
+        if k < 0 or target < 0:
+            return
+        # when reaching the end
+        if k == 0 and target == 0:
+            res.append(path)
+        for i in range(index, len(nums)):
+            self.dfs(nums, k-1, i+1, path+[nums[i]], res, target-nums[i])
+
 

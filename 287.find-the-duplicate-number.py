@@ -5,11 +5,29 @@
 #
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        for i in range(len(nums)):
-            index = abs(nums[i])
+        # # Find the intersection point of the two runners.
+        # tortoise = nums[0]
+        # hare = nums[0]
+        # while True:
+        #     tortoise = nums[tortoise]
+        #     hare = nums[nums[hare]]
+        #     if tortoise == hare:
+        #         break
+        
+        # # Find the "entrance" to the cycle.
+        # ptr1 = nums[0]
+        # ptr2 = tortoise
+        # while ptr1 != ptr2:
+        #     ptr1 = nums[ptr1]
+        #     ptr2 = nums[ptr2]
+        
+        # return ptr1
+        for item in nums:
+            index = abs(item)-1
             if nums[index]<0:
-                return abs(nums[i])
+                return abs(item)
             else:
                 nums[index] *= -1
         
+
 

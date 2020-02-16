@@ -20,6 +20,6 @@ class Solution:
             else:
                 count1, count2 = count1-1, count2-1
         return [item for item in (item1, item2) if \
-                                nums.count(item)>len(nums)//3]
+                        nums.count(item)>len(nums)//3]
 
 

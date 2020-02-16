@@ -5,6 +5,8 @@
 #
 class Solution:
     def shortestPalindrome(self, s: str) -> str:
+        # https://www.cnblogs.com/grandyang/p/4523624.html
+        # https://www.cnblogs.com/grandyang/p/6992403.html
         rev_s = s[::-1]
         l = s + "#" +  rev_s
         p = [0] * len(l)

@@ -11,6 +11,10 @@
 
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
+        """
+        Time complexity : O(n)
+        Space complexity : O(1)
+        """
         prev = None
         curr = head
 
