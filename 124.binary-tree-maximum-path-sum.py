@@ -12,11 +12,27 @@
 
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
-        def maxsums(node):
-            if not node:
-                return [-2**31] * 2
-            left = maxsums(node.left)
-            right = maxsums(node.right)
-            return [node.val + max(left[0], right[0], 0),
-                    max(left + right + [node.val + left[0] + right[0]])]
-        return max(maxsums(root))
+        """
+        https://www.cnblogs.com/slurm/p/5345985.html
+        使用一个全局变量current_max，记录当前计算得出的最大路径。
+        递归的思路：左子树中的最大路径和，右子树中的最大路径和，以
+        及左子树中以root.left为起点的最大路径（需要大于零）+右子树
+        中以root.right为起点的最大路径（需要大于零）+root.val），
+        这三者中的最大值就是最大的路径和
+        """
+        self.maxSum = float('-inf')
+        self._maxPathSum(root)
+        return self.maxSum
+
+    def _maxPathSum(self, root):  # DFS
+        if root is None:
+            return 0
+        left = max(self._maxPathSum(root.left), 0)
+        right = max(self._maxPathSum(root.right), 0)
+        self.maxSum = max(self.maxSum, root.val + left + right)
+        return max(left, right) + root.val
+
+    
+    
+
+        

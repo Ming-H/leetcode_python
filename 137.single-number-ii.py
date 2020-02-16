@@ -7,11 +7,10 @@
 # @lc code=start
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        one, two = 0, 0
-        for x in nums:
-            one, two, three = one ^ x, two | (one & x), two & x
-            one, two = one & ~three, two & ~three
-        return one
-
+        a,b=0,0
+        for num in nums:
+            b=b^num&~a
+            a=a^num&~b
+        return b
 # @lc code=end
 

@@ -12,16 +12,17 @@
 
 class Solution:
     def levelOrderBottom(self, root: TreeNode) -> List[List[int]]: 
-        # dfs recursively
-        res = []
-        self.dfs(root, 0, res)
-        return res
+        # 参看102，插入位置不同而已
+        if not root:
+            return []
+        ans, level = [], [root]
+        while level:
+            ans.insert(0, [node.val for node in level])
+            temp = []
+            for node in level:
+                temp.extend([node.left, node.right])
+            level = [leaf for leaf in temp if leaf]
+        return ans
 
-    def dfs(self, root, level, res):
-        if root:
-            if len(res) < level + 1:
-                res.insert(0, [])
-            res[-(level+1)].append(root.val)
-            self.dfs(root.left, level+1, res)
-            self.dfs(root.right, level+1, res)
 
+    

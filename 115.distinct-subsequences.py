@@ -8,6 +8,7 @@ class Solution:
         """
         dp method
         https://blog.csdn.net/XX_123_1_RJ/article/details/80789223
+        dp[i][j] = dp[i][j-1] + dp[i-1][i-j] * (T[i] == S[j])
         """
         m, n = len(s)+1, len(t)+1
         dp = [0] * n  # 初始化dp

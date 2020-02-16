@@ -12,8 +12,8 @@ class Solution:
         :rtype: int
         """
         a = 0
-        for i in nums:
-            a ^= i
+        for item in nums:
+            a ^= item
         return a
         
 # @lc code=end

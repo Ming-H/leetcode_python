@@ -11,16 +11,17 @@
 #         self.right = None
 
 class Solution:
-    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
-       if not root:
+    def hasPathSum(self, root: TreeNode, Sum: int) -> bool:
+        if not root:
             return False
 
-        if not root.left and not root.right and root.val == sum:
+        if not root.left and not root.right and root.val == Sum:
             return True
         
-        sum -= root.val
+        Sum -= root.val
 
-        return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
+        return self.hasPathSum(root.left, Sum) or \
+                        self.hasPathSum(root.right, Sum)
  
 
  

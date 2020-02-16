@@ -8,10 +8,10 @@ class Solution:
         if not nums:
             return 
         locMin = locMax = gloMax = nums[0]
-        for i in range(1, len(nums)):
+        for item in nums[1:]:
             tmp = locMin
-            locMin = min(locMin*nums[i], nums[i], locMax*nums[i]) 
-            locMax = max(tmp*nums[i], nums[i], locMax*nums[i])
+            locMin = min(locMin*item, item, locMax*item) 
+            locMax = max(tmp*item, item, locMax*item)
             gloMax = max(gloMax, locMax)
         return gloMax     
 

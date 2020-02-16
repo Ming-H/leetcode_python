@@ -9,10 +9,10 @@ class Solution:
         while left < right:
             mid = left + (right-left)//2
             if nums[mid]>nums[right]:
-                left = mid + 1
+                left = mid + 1 # left 移动一个
             else:
                 if nums[right]!=nums[mid]:
-                    right = mid
+                    right = mid # right直接移动到mid
                 else:
                     right -= 1
         return nums[left]

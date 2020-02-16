@@ -14,6 +14,7 @@
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         # Definition for singly-linked list.
+        # 参考287
         dummy=ListNode(0)
         dummy.next=head
         slow=fast=dummy
@@ -27,6 +28,8 @@ class Solution:
                     fast=fast.next
                 return slow 
         return  None     
+        
+      
 
 # @lc code=end
 

@@ -16,7 +16,7 @@ class Solution:
             return None
 
         mid = len(nums) // 2
-
+        # 找到根结点的位置，然后递归
         root = TreeNode(nums[mid])
         root.left = self.sortedArrayToBST(nums[:mid])
         root.right = self.sortedArrayToBST(nums[mid+1:])
