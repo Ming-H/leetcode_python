@@ -22,7 +22,7 @@ class Solution:
         while True:
             while root:
                 stack.append(root)
-                root = root.left
+                root = root.left #求第k大，则先访问右子树
             root = stack.pop()
             k -= 1
             if not k:

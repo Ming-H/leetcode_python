@@ -18,7 +18,7 @@ class Solution:
         :rtype: void Do not return anything, modify node in-place instead.
         Time and space complexity are both O(1)O(1).
         """
-        node.val = node.next.val
+        node.val = node.next.val # 把下一个元素放到当前
         node.next = node.next.next
         
 # @lc code=end

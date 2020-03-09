@@ -28,7 +28,6 @@ class Solution:
                 current_node = current_node.next
                 
         return dummy_head.next
-
-
+        
 # @lc code=end
 

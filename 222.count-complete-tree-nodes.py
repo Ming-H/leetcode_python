@@ -16,9 +16,9 @@ class Solution:
             return 0
         leftDepth = self.getDepth(root.left)
         rightDepth = self.getDepth(root.right)
-        if leftDepth == rightDepth:
+        if leftDepth == rightDepth: # 左边是满二叉树，右边可能是完全二叉树
             return pow(2, leftDepth) + self.countNodes(root.right)
-        else:
+        else: # 左边是完全二叉树，右边可能是满二叉树
             return pow(2, rightDepth) + self.countNodes(root.left)
 
     def getDepth(self, root):

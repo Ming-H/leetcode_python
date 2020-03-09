@@ -17,6 +17,7 @@ class Solution:
         # when reaching the end
         if k == 0 and target == 0:
             res.append(path)
+            return
         for i in range(index, len(nums)):
             self.dfs(nums, k-1, i+1, path+[nums[i]], res, target-nums[i])
 
