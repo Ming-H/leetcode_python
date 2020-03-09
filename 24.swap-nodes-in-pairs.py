@@ -13,10 +13,9 @@ class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         pre, pre.next = self, head
         while pre.next and pre.next.next:
-            a = pre.next
-            b = a.next
+            a, b = pre.next, pre.next.next
             pre.next, b.next, a.next = b, a, b.next
-            pre = a # 此时b在a前面 
+            pre = a
         return self.next
                     
 

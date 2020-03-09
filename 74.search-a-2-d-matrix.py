@@ -20,6 +20,20 @@ class Solution:
                         start = mid + 1
                 break
         return False
+
+        # if len(matrix)==0 or len(matrix[0])==0:
+        #     return 0
+        # m, n = len(matrix), len(matrix[0])
+        # left, right = 0, m*n
+        # while left < right:
+        #     mid = (left + right) // 2
+        #     if matrix[mid // n][mid % n] == target:
+        #         return True
+        #     if matrix[mid // n][mid % n] < target:
+        #         left = mid + 1
+        #     else:
+        #         right = mid
+        # return False
         
                 
 

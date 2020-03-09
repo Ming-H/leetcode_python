@@ -11,18 +11,18 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        # res = 0
-        # if m<0 or n<0:
-        #     return res
+        res = 0
+        if m<0 or n<0:
+            return res
         
-        # res_matrix = [[0 for i in range(n+1)] for j in range(m+1)]
-        # res_matrix[1][1] = 1
+        res_matrix = [[0 for i in range(n+1)] for j in range(m+1)]
+        res_matrix[1][1] = 1
 
-        # for i in range(1, m+1):
-        #     for j in range(1, n+1):
-        #         res_matrix[i][j] += res_matrix[i-1][j]+ \
-        #                             res_matrix[i][j-1]
-        # return res_matrix[-1][-1]
+        for i in range(1, m+1):
+            for j in range(1, n+1):
+                res_matrix[i][j] += res_matrix[i-1][j]+ \
+                                    res_matrix[i][j-1]
+        return res_matrix[-1][-1]
         
         # https://www.cnblogs.com/grandyang/p/4353555.html
         # dp = [[1 for col in range(n)] for row in range(m)]  
@@ -33,11 +33,11 @@ class Solution:
         #         dp[i][j] = dp[i][j-1] + dp[i-1][j]
         # return dp[i][j]
        
-        dp = [1 for i in range(n)]
-        for i in range(1, m):
-            for j in range(1,n):
-                dp[j] += dp[j-1]
-        return dp[n-1]
+        # dp = [1 for i in range(n)]
+        # for i in range(1, m):
+        #     for j in range(1,n):
+        #         dp[j] += dp[j-1]
+        # return dp[n-1]
 
 
 

@@ -12,8 +12,7 @@
 class Solution(object):
     def mergeKLists(self, lists):
         """
-        :type lists: List[ListNode]
-        :rtype: ListNode
+        Time complexity : O(Nlogk), k is the number of linked lists.
         """
         amount = len(lists)
         interval = 1

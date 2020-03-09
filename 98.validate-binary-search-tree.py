@@ -23,13 +23,8 @@ class Solution:
             val = node.val
             if val <= lower or val >= upper:
                 return False
-
-            if not helper(node.right, val, upper):
-                return False
-            if not helper(node.left, lower, val):
-                return False
-            return True
-
+            return helper(node.right, val, upper) and \
+                            helper(node.left, lower, val)
         return helper(root)
         
 

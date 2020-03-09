@@ -34,8 +34,7 @@ class Solution:
         if  len(s)<1:
             return ""
         
-        def expand(s, left, right):
-            L, R = left, right
+        def expand(s, L, R):
             while L>=0 and R<len(s) and s[L]==s[R]:
                 L -= 1
                 R += 1

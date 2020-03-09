@@ -12,7 +12,7 @@ class Solution:
         maxarea = 0
         l = 0
         r = len(height)-1
-        while l<r:
+        while l<=r:
             maxarea = max(maxarea, min(height[l], height[r]) * (r-l))
 
             if height[l] < height[r]:
