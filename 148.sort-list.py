@@ -37,10 +37,10 @@ class Solution:
                 cur.next = right
                 right = right.next
                 cur = cur.next
-            if left:
-                cur.next = left
-            if right:
-                cur.next = right
+        if left:
+            cur.next = left
+        if right:
+            cur.next = right
         return res.next
 
 

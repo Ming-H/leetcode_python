@@ -8,7 +8,7 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         temp=[]
-        ops=frozenset(("/","+","*","-"))
+        ops=("/","+","*","-")
         for i in iter(tokens):
             if i not in ops:
                 temp.append(i)

@@ -12,6 +12,9 @@
 
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
+        """
+        94 中序遍历
+        """
         ret = []
         stack = [root]
         while stack:

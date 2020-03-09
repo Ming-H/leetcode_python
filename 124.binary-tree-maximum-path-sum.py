@@ -20,19 +20,18 @@ class Solution:
         中以root.right为起点的最大路径（需要大于零）+root.val），
         这三者中的最大值就是最大的路径和
         """
+        def maxPathSum(root):  # DFS
+            if root is None:
+                return 0
+            left = max(maxPathSum(root.left), 0)
+            right = max(maxPathSum(root.right), 0)
+            self.maxSum = max(self.maxSum, root.val + left + right)
+            return max(left, right) + root.val
         self.maxSum = float('-inf')
-        self._maxPathSum(root)
+        maxPathSum(root)
         return self.maxSum
-
-    def _maxPathSum(self, root):  # DFS
-        if root is None:
-            return 0
-        left = max(self._maxPathSum(root.left), 0)
-        right = max(self._maxPathSum(root.right), 0)
-        self.maxSum = max(self.maxSum, root.val + left + right)
-        return max(left, right) + root.val
-
-    
-    
-
         
+        
+
+    
+       

@@ -16,6 +16,26 @@ class Solution:
                     if s[i:j+1] in wordDict:
                         dp[j+1] = True
         return dp[-1]
+        
+        # my code
+        # d  = {}
+        # for item in wordDict:
+        #     if item not in d:
+        #         d[item] = 1
+        #     else:
+        #         d[item] += 1
+        
+        # def dfs(s, d):
+        #     if not s:
+        #         return True
+        #     for i in range(len(s)+1):
+        #         if s[:i] in d:
+        #             dfs(s[i:], d)
+        #     return False
+
+        # return dfs(s, d)
+        
+        
 
 
         

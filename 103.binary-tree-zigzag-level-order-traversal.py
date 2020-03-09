@@ -32,3 +32,4 @@ class Solution:
         self.addLevel(ans, level + 1, root.left)
         self.addLevel(ans, level + 1, root.right)
 
+

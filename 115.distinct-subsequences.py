@@ -11,12 +11,22 @@ class Solution:
         dp[i][j] = dp[i][j-1] + dp[i-1][i-j] * (T[i] == S[j])
         """
         m, n = len(s)+1, len(t)+1
-        dp = [0] * n  # 初始化dp
-        dp[0] = 1
- 
-        for j in range(1, m):
-            pre = dp[:]  # pre 表示前一列的值
-            for i in range(1, n):
-                dp[i] = pre[i] + pre[i - 1] * (t[i - 1] == s[j - 1])
-        return dp[-1]
+        dp = [[1] * n for _ in range(m)]
+        for j in range(1, n):
+            dp[0][j] = 0
+        print(dp)
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = dp[i-1][j] + dp[i-1][j-1]*(s[i-1] == t[j-1])
+        return dp[-1][-1]
         
+        # O(n) space  
+        # l1, l2 = len(s)+1, len(t)+1
+        # cur = [0] * l2
+        # cur[0] = 1
+        # for i in range(1, l1):
+        #     pre = cur[:]
+        #     for j in range(1, l2):
+        #         cur[j] = pre[j] + pre[j-1]*(s[i-1] == t[j-1])
+        # return cur[-1]
+
