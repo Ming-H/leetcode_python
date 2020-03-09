@@ -7,6 +7,9 @@
 # @lc code=start
 class Solution:
     def reverseWords(self, s: str) -> str:
+        """
+        两次反转
+        """
         return ' '.join(s.split()[::-1])[::-1]
 # @lc code=end
 

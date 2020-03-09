@@ -7,17 +7,20 @@
 # @lc code=start
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        n = len(nums)
+        """
+        sum[i]−sum[j]=k, the sum of elements lying between 
+        indices i and j is k.
+        """
         d = collections.defaultdict(int)
         d[0] = 1
-        sum = 0
-        res = 0
-        for i in range(n):
-            sum += nums[i]
-            if sum - k in d:
-                res += d[sum - k]
-            d[sum] += 1
-        return res
+        Sum = 0
+        count = 0
+        for item in nums:
+            Sum += item
+            if Sum-k in d:
+                count += d[Sum-k]
+            d[Sum] += 1
+        return count
 
         
 # @lc code=end

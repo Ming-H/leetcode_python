@@ -26,5 +26,7 @@ class Solution:
                 else:
                     first = i
                 prev = i
-        mn = min(mn, total - prev + first)  #first time and last time diff, e.g 0 and 1200, 1439, so here min is between 1439 and 0
+        mn = min(mn, total - prev + first)  
+        #first time and last time diff, e.g 0 and 1200, 1439, 
+        # so here min is between 1439 and 0
         return mn

@@ -29,8 +29,10 @@ class Solution:
             else:
                 otherNum = num + k
                 if otherNum in count:
-                    pairs.add((num, otherNum) if num <= otherNum else (otherNum, num))
+                    pairs.add((num, otherNum) if num <= otherNum \
+                                            else (otherNum, num))
                     
         return len(pairs)
+        
 # @lc code=end
 

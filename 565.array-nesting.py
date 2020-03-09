@@ -12,15 +12,13 @@ class Solution:
         Space complexity : O(1)
         """
         res = 0
-        for i in range(len(nums)):
-            if nums[i] != float('inf'):
-                start = nums[i]
+        for item in nums:
+            if item != float('inf'):
+                start = item
                 count = 0
                 while nums[start]!=float('inf'):
-                    tmp = start
-                    start = nums[start]
+                    nums[start], start = float('inf'), nums[start]
                     count += 1
-                    nums[tmp] = float('inf')
                 res = max(res, count)
 
         return res

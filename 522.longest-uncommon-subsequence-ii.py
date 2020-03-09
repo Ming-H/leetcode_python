@@ -7,24 +7,26 @@
 # @lc code=start
 class Solution:
     def findLUSlength(self, strs: List[str]) -> int:
-        C = collections.Counter(strs)
-        S = sorted(C.keys(), key = len, reverse = True)
-        for i,s in enumerate(S):
-            if C[s] != 1: 
+        d = collections.Counter(strs)
+        L = sorted(d.keys(), key = len, reverse = True)
+        for i, item in enumerate(L):
+            if d[item] != 1: 
                 continue
-            b = True
+            Flag = True
+            # 判断item是不是最长非公共子序列
             for j in range(i):
-                I, c = -1, True
-                for i in s:
-                    I = S[j].find(i,I+1)
-                    if I == -1:
-                        c = False
+                index, flag = -1, True
+                for alpha in item:
+                    index = L[j].find(alpha,index+1)
+                    if index == -1:
+                        flag = False
                         break
-                if c:
-                    b = False
+                if flag: # item 是重复的子序列，不满足
+                    Flag = False
                     break
-            if b: 
-                return len(s)
+            # 如果是最长非公共子序列
+            if Flag: 
+                return len(item)
         return -1
 # @lc code=end
 

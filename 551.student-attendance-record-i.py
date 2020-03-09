@@ -10,9 +10,9 @@ class Solution:
         a = 0
         for i in range(len(s)): 
             if s[i] == 'A': 
-                if a: 
+                if a>=1: 
                     return False
-                a = 1
+                a += 1
             elif s[i] == 'L' and 0 < i < len(s)-1 \
                             and s[i-1] == 'L' == s[i+1]: 
                 return False

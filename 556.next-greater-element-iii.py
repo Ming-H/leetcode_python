@@ -23,7 +23,7 @@ class Solution:
                 nums[i-1], nums[j] = nums[j], nums[i-1]
                 break
         ans = int("".join(nums))
-        if ans > 1 << 31:
+        if ans > 1 << 31: #所以带符号32位int类型整数为-2147483648~2147483647
             return -1
         else:
             return ans
