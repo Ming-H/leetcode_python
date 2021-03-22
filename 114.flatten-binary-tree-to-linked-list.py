@@ -11,6 +11,9 @@
 #         self.right = None
 
 class Solution:
+    """
+    hard, 重点关注
+    """
     def __init__(self):
         self.prev = None
         

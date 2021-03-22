@@ -20,7 +20,7 @@ class Solution:
         if not root:
             return
         elif len(ans) <= level:
-                ans.append([root.val])
+            ans.append([root.val])
         elif not level%2:
             #if it is an even level, then level ans should be inversed, 
             # so I use extend founction

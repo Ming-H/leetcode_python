@@ -15,7 +15,6 @@ class Solution:
         """
         if not matrix:
             return False
-            
         depth = len(matrix)
         width = len(matrix[0])
         row, col = depth - 1, 0

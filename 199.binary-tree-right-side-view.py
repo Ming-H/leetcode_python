@@ -12,22 +12,16 @@
 
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
-        rightmost_value_at_depth = dict() # depth -> node.val
+        res = {}
         max_depth = -1
-
         stack = [(root, 0)]
         while stack:
             node, depth = stack.pop()
-
-            if node is not None:
-                # maintain knowledge of the number of levels in the tree.
+            if node:
                 max_depth = max(max_depth, depth)
-
-                # only insert into dict if depth is not already present.
-                rightmost_value_at_depth.setdefault(depth, node.val)
-
+                res.setdefault(depth, node.val)
                 stack.append((node.left, depth+1))
                 stack.append((node.right, depth+1))
+        return [res[depth] for depth in range(max_depth+1)]
 
-        return [rightmost_value_at_depth[depth] for depth in range(max_depth+1)]
-
+    

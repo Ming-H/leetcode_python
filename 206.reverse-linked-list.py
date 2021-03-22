@@ -15,15 +15,13 @@ class Solution:
         Time complexity : O(n)
         Space complexity : O(1)
         """
-        prev = None
-        curr = head
-
-        while curr:
-            next = curr.next
-            curr.next = prev
-            prev = curr
-            curr = next
-        
-        return prev
+        pre = None
+        cur = head
+        while cur:
+            next = cur.next
+            cur.next = pre
+            pre = cur
+            cur = next
+        return pre
     
 

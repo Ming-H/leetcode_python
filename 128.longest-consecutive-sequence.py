@@ -17,20 +17,15 @@ class Solution:
         O(1)只是理想的实现，实际上很多hash的实现是进行了离散化的。
         dict比set多了一步hash的过程，so 它比set慢，不过差别不大。
         """
-        
-        longest_streak = 0
-        num_set = set(nums)
-
-        for num in num_set:
-            if num - 1 not in num_set:
-                current_num = num
-                current_streak = 1
-
-                while current_num + 1 in num_set:
-                    current_num += 1
-                    current_streak += 1
-
-                longest_streak = max(longest_streak, current_streak)
-
-        return longest_streak
+        res = 0
+        nums = set(nums)
+        for item in nums:
+            if item-1 not in nums:
+                cur = item
+                cnt = 1
+                while cur+1 in nums:
+                    cur += 1
+                    cnt += 1
+                res = max(res, cnt)
+        return res
 

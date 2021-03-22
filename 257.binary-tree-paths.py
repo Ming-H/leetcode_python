@@ -18,13 +18,13 @@ class Solution:
         self.dfs(root, "", res)
         return res
     
-    def dfs(self, root, ls, res):
+    def dfs(self, root, path, res):
         if not root.left and not root.right:
-            res.append(ls+str(root.val))
+            res.append(path+str(root.val))
         if root.left:
-            self.dfs(root.left, ls+str(root.val)+ "->", res)
+            self.dfs(root.left, path+str(root.val)+ "->", res)
         if root.right:
-            self.dfs(root.right, ls+str(root.val)+ '->', res)
+            self.dfs(root.right, path+str(root.val)+ "->", res)
             
 
 

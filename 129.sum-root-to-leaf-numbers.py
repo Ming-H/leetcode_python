@@ -18,11 +18,7 @@ class Solution:
     
     def dfs(self, root, value):
         if root:
-            #if not root.left and not root.right:
-            #    self.res += value*10 + root.val
             self.dfs(root.left, value*10+root.val)
-            #if not root.left and not root.right:
-            #    self.res += value*10 + root.val
             self.dfs(root.right, value*10+root.val)
             if not root.left and not root.right:
                 self.res += value*10 + root.val
